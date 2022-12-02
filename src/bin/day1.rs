@@ -1,7 +1,7 @@
 use std::fs;
 
 #[cfg(test)]
-mod day1{
+mod day1 {
     use super::*;
 
     const TEST_DATA: &str = "1000
@@ -38,7 +38,7 @@ pub fn find_totals(data: &str) -> Vec<i32> {
     let split = data.split("\n");
     let mut totals: Vec<i32> = Vec::new();
     let mut current_total: i32 = 0;
-    
+
     for s in split {
         if s.trim() == "" {
             totals.push(current_total);
@@ -49,9 +49,8 @@ pub fn find_totals(data: &str) -> Vec<i32> {
 
         match s.trim().parse::<i32>() {
             Ok(val) => current_total += val,
-            Err(err)  => panic!("{} ({})", err, s),
+            Err(err) => panic!("{} ({})", err, s),
         }
-
     }
 
     // Handle the last element

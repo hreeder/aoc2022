@@ -1,9 +1,8 @@
-use std::fs;
+#![allow(dead_code)]
+#![allow(unused_variables)]
 
 #[cfg(test)]
-mod day7 {
-    use super::*;
-    
+mod day7 {    
     const TEST_DATA: &str = "$ cd /
     $ ls
     dir a
@@ -43,8 +42,8 @@ impl FSEntry {
 }
 
 pub fn parse_fs(history: &str) {
-    let mut root = FSEntry::new(String::from("/"));
-    let mut current_path = "/";
+    let root = FSEntry::new(String::from("/"));
+    let current_path = "/";
 
     for line in history.trim().lines() {
         if line.starts_with("$ ") {
